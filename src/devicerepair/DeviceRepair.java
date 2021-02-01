@@ -9,8 +9,8 @@ public class DeviceRepair {
     private static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         
-        Device myNewDevice = new Device("12345", "Asus", "Alex", "Smashed Screen", "Not started yet", 1);
-        
+        //Device myNewDevice = new Device("12345", "Asus", "Alex", "Smashed Screen", "Not started yet", 1);
+        Laptop myNewDevice = new Laptop (1,"12345", "Asus", "Alex", "Smashed Screen", "Not started yet", 1);
         System.out.println(myNewDevice.toString());
         
         String thing = myNewDevice.toString();

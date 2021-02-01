@@ -1,10 +1,8 @@
 
 package devicerepair;
 
-import java.util.logging.Logger;
 
-
-public class Device {
+public abstract class Device {
     
     protected String IdentificationCode;
     protected String MakeAndModel;
@@ -77,4 +75,5 @@ public class Device {
         return IdentificationCode + ", " + MakeAndModel + ", " + Owner + ", " + ProblemDescription + " " + RepairNotes + ", " + Priority;
     }
     
+    abstract int priorityRank();
 }

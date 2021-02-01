@@ -4,12 +4,14 @@ package devicerepair;
 import java.util.ArrayList;
 
 
-public class Laptop extends Device{
+public class Laptop extends Device implements recyclable, chargabelRepair{
     
     private ArrayList<Component> Components = new ArrayList<>();
-
-    public Laptop(String IdentificationCode, String MakeAndModel, String Owner, String ProblemDescription, String RepairNotes, int Priority) {
+    private int priority;
+    
+    public Laptop(int priority, String IdentificationCode, String MakeAndModel, String Owner, String ProblemDescription, String RepairNotes, int Priority) {
         super(IdentificationCode, MakeAndModel, Owner, ProblemDescription, RepairNotes, Priority);
+        this.priority = priority;
     }
 
     public ArrayList<Component> getComponents() {
@@ -26,5 +28,19 @@ public class Laptop extends Device{
         }
         
     }
+
+    @Override
+    int priorityRank() {
+        return priority;
+    }
+
+    @Override
+    public ArrayList<Component> isRecyclable() {
+        return Components;
+    }
     
+    @Override
+    public boolean isChargable(){
+        return true;
+    }
 }
